@@ -1,12 +1,12 @@
 .Container {
   width: 700px;
   line-height: 1;
-  margin: 70px 0px 70px 140px;
+  margin: 70px 0px 0px 140px;
   -webkit-font-smoothing: antialiased; }
   @media (max-width: 480px) {
     .Container {
       width: 480px;
-      margin: 70px 0px 70px 0px; } }
+      margin: 70px 0px 0px 0px; } }
 
 .About {
   font-size: 1.15em;
@@ -24,5 +24,13 @@
     .Project__Title a, .Project__Title a:visited {
       text-decoration: none;
       color: #000; }
-    .Project__Title a:hover {
-      color: #27AE60; }
+      .Project__Title a:hover, .Project__Title a:visited:hover {
+        color: #27AE60; }
+
+.Salutation:after {
+  width: 100px;
+  height: 20px;
+  content: "(*\FF3E \25BD \FF3E )\FF0F "; }
+
+.Salutation:hover:after {
+  content: "(\FFE3 ^\FFE3 )"; }
