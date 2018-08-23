@@ -1,0 +1,21 @@
+.Container {
+  width: 700px;
+  line-height: 1;
+  margin: 70px 0px 70px 140px;
+  -webkit-font-smoothing: antialiased; }
+  @media (max-width: 480px) {
+    .Container {
+      width: 480px;
+      margin: 70px 0px 70px 0px; } }
+
+.About {
+  font-size: 1.15em;
+  line-height: 1.5em; }
+
+.Section {
+  margin-bottom: 55px; }
+  .Section__Title {
+    margin-bottom: 35px; }
+
+.Project {
+  margin-bottom: 35px; }
