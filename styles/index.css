@@ -27,10 +27,11 @@
       .Project__Title a:hover, .Project__Title a:visited:hover {
         color: #27AE60; }
 
-.Salutation:after {
-  width: 100px;
-  height: 20px;
-  content: "(*\FF3E \25BD \FF3E )\FF0F "; }
-
-.Salutation:hover:after {
-  content: "(\FFE3 ^\FFE3 )"; }
+.Salutation {
+  display: inline; }
+  .Salutation:after {
+    width: 100px;
+    height: 20px;
+    content: "(*\FF3E \25BD \FF3E )\FF0F "; }
+  .Salutation:hover:after {
+    content: "(\FFE3 ^\FFE3 )"; }
