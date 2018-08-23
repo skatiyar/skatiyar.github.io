@@ -19,3 +19,10 @@
 
 .Project {
   margin-bottom: 35px; }
+  .Project__Title {
+    font-size: 1.1em; }
+    .Project__Title a, .Project__Title a:visited {
+      text-decoration: none;
+      color: #000; }
+    .Project__Title a:hover {
+      color: #27AE60; }
