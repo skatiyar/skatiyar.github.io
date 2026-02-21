@@ -89,4 +89,4 @@ date: 'YYYY-MM-DD'
 - Links use `base` from `$app/paths` for GitHub Pages subpath compatibility
 - ESM only (`"type": "module"`)
 - Pre-commit hook (husky + lint-staged) runs ESLint + Prettier on staged files
-- Deployment: GitHub Actions on push to `main` (`.github/workflows/deploy.yml`)
+- Deployment: GitHub Actions on push to `master` (`.github/workflows/deploy.yml`)
