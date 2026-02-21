@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-bg: #faf6f1;
+  --color-bg-secondary: #f0e9df;
+  --color-text-primary: #2d2418;
+  --color-text-secondary: #7c6a56;
+  --color-border: #e0d4c6;
+  --color-accent: #c2410c;
+  --color-accent-hover: #9a3412;
+  --color-code-bg: #f0e9df;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+
+  --max-width-content: 720px;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root.dark {
+    --color-bg: #191210;
+    --color-bg-secondary: #261e18;
+    --color-text-primary: #f5efe8;
+    --color-text-secondary: #b09e8a;
+    --color-border: #3a2f25;
+    --color-accent: #fb923c;
+    --color-accent-hover: #fdba74;
+    --color-code-bg: #261e18;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.7;
+  }
+
+  /* Radial reveal from bottom-right when transitioning dark → light */
+  ::view-transition-old(root) {
+    animation: none;
+    z-index: 1;
+  }
+  ::view-transition-new(root) {
+    animation: radial-reveal 3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+
+  @keyframes radial-reveal {
+    0% {
+      clip-path: circle(0% at 100% 100%);
+    }
+    /* 1st beat — quick expand */
+    12% {
+      clip-path: circle(18% at 100% 100%);
+    }
+    /* recoil */
+    20% {
+      clip-path: circle(10% at 100% 100%);
+    }
+    /* 2nd beat — stronger expand */
+    34% {
+      clip-path: circle(42% at 100% 100%);
+    }
+    /* settle back */
+    44% {
+      clip-path: circle(32% at 100% 100%);
+    }
+    /* smooth fill to full */
+    100% {
+      clip-path: circle(150% at 100% 100%);
+    }
+  }
+
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+  }
+
+  .prose {
+    --tw-prose-body: var(--color-text-primary);
+    --tw-prose-headings: var(--color-text-primary);
+    --tw-prose-links: var(--color-accent);
+    --tw-prose-bold: var(--color-text-primary);
+    --tw-prose-quotes: var(--color-text-secondary);
+    --tw-prose-quote-borders: var(--color-accent);
+    --tw-prose-code: var(--color-text-primary);
+    --tw-prose-pre-bg: var(--color-code-bg);
+    --tw-prose-pre-code: var(--color-text-primary);
+    --tw-prose-hr: var(--color-border);
+  }
+}
