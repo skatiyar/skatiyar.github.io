@@ -4,6 +4,7 @@ description: CHIP8 Emulator in golang.
 type: opensource
 repo: https://github.com/skatiyar/go-chip8
 date: '2018-01-01'
+ranking: 3
 ---
 
 CHIP8 Emulator in golang.

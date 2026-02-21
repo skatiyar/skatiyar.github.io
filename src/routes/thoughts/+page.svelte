@@ -1,13 +1,14 @@
 <script>
   import SEO from '$lib/components/SEO.svelte';
+  import Hero from '$lib/components/Hero.svelte';
   import { base } from '$app/paths';
 
   let { data } = $props();
 </script>
 
-<SEO title="Thoughts" description="All thoughts" />
+<SEO title="Thoughts" description="Ideas, learnings, and notes." />
 
-<h1 class="mb-8 text-2xl font-bold">Thoughts</h1>
+<Hero title="Thoughts" description="Ideas, learnings, and notes." />
 
 <ul class="flex list-none flex-col gap-6">
   {#each data.thoughts as thought}

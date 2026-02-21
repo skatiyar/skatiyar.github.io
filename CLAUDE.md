@@ -20,12 +20,12 @@ src/
   projects/          # Project pages (*.md with YAML frontmatter)
   routes/            # SvelteKit file-based routing
     +page.svelte     # Homepage
-    projects/        # /projects — listing (open source + closed source)
+    projects/        # /projects — listing (sorted by ranking)
     thoughts/        # /thoughts — listing, /thoughts/[slug] — detail
     rss.xml/         # /rss.xml
     sitemap.xml/     # /sitemap.xml
   lib/
-    components/      # Header, Footer, SEO
+    components/      # Header, Footer, Hero, SEO
     config.js        # Site metadata (title, author, URL)
     utils/thoughts.js  # Thought loader (import.meta.glob)
     utils/projects.js  # Project loader (import.meta.glob)
@@ -52,6 +52,7 @@ type: opensource | closed
 repo: https://... # optional
 url: https://... # optional
 date: 'YYYY-MM-DD'
+ranking: number # display order (lower = first); date used as tiebreaker
 ```
 
 ## Design Guidelines
@@ -60,7 +61,7 @@ date: 'YYYY-MM-DD'
 
 | Role       | Class       | Weight          | Used for                               |
 | ---------- | ----------- | --------------- | -------------------------------------- |
-| Display    | `text-4xl`  | `font-bold`     | Homepage hero name                     |
+| Display    | `text-4xl`  | `font-bold`     | Hero section titles (all pages)        |
 | Heading    | `text-2xl`  | `font-bold`     | Page h1s, section h2s                  |
 | Subheading | `text-lg`   | `font-semibold` | Card titles, intro text, project names |
 | Body       | `text-base` | normal          | Descriptions, body text                |

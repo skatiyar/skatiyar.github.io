@@ -14,7 +14,12 @@ export async function getProjects() {
     };
   });
 
-  projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+  projects.sort((a, b) => {
+    const rankA = a.ranking != null ? a.ranking : Infinity;
+    const rankB = b.ranking != null ? b.ranking : Infinity;
+    if (rankA !== rankB) return rankA - rankB;
+    return new Date(b.date) - new Date(a.date);
+  });
 
   return projects;
 }
