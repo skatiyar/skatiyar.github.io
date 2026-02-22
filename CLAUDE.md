@@ -26,9 +26,10 @@ src/
     sitemap.xml/     # /sitemap.xml
   lib/
     components/      # Header, Footer, Hero, SEO
-    config.js        # Site metadata (title, author, URL)
+    config.js        # Site metadata (title, author, URL, GA ID)
     utils/thoughts.js  # Thought loader (import.meta.glob)
     utils/projects.js  # Project loader (import.meta.glob)
+  app.html           # Shell HTML — GA4 gtag.js snippet, dark class
   app.css            # Tailwind v4 config (@theme tokens, @variant dark, base styles)
 ```
 

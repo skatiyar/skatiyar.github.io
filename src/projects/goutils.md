@@ -1,6 +1,6 @@
 ---
 title: goutils
-description: Golang utility functions to ease working with sync/async tasks. .
+description: Golang utility functions to ease working with sync/async tasks.
 type: opensource
 repo: https://github.com/skatiyar/goutils
 url: https://pkg.go.dev/github.com/skatiyar/goutils
