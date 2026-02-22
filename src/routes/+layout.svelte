@@ -22,7 +22,7 @@
 </script>
 
 <Header />
-<main class="max-w-content ml-[max(1.5rem,calc((100%-720px)/2.618))] w-full flex-1 pt-3 pr-6 pb-8">
+<main class="max-w-content ml-[max(1.5rem,calc((100%-720px)/2.618))] flex-1 pt-3 pr-6 pb-8">
   {@render children()}
 </main>
 <Footer />
