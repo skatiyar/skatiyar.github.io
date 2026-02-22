@@ -1,5 +1,6 @@
 <script>
   import SEO from '$lib/components/SEO.svelte';
+  import Hero from '$lib/components/Hero.svelte';
   import { base } from '$app/paths';
 
   let { data } = $props();
@@ -7,15 +8,10 @@
 
 <SEO />
 
-<section class="py-8">
-  <h1 class="mb-2 text-4xl font-bold">Suyash Katiyar</h1>
-  <p class="text-text-secondary text-lg">
-    A maker at core, I enjoy spending time prototyping ideas, to learn and challenge myself. Having
-    worked as both backend and frontend developer early in my career, has given me insights to
-    understand challenges faced in product development and often helped me to come up with unique
-    solutions.
-  </p>
-</section>
+<Hero
+  title="Suyash Katiyar"
+  description="A maker at core, I enjoy spending time prototyping ideas, to learn and challenge myself. Having worked as both backend and frontend developer early in my career, has given me insights to understand challenges faced in product development and often helped me to come up with unique solutions."
+/>
 
 {#if data.latest.length > 0}
   <section>
@@ -35,7 +31,7 @@
             {/if}
           </div>
           <div class="flex min-w-0 flex-col justify-center">
-            <div class="mb-2 flex items-center gap-2">
+            <div class="flex items-center gap-2">
               <span
                 class="text-text-primary group-hover:text-accent text-lg font-semibold transition-colors"
                 >{item.title}</span
@@ -45,7 +41,7 @@
                 >{item.kind}</span
               >
             </div>
-            <p class="text-text-secondary truncate text-base">{item.description}</p>
+            <p class="text-text-secondary text-base">{item.description}</p>
             <time class="text-text-secondary mt-2 text-sm"
               >{new Date(item.date).toLocaleDateString('en-US', {
                 year: 'numeric',
