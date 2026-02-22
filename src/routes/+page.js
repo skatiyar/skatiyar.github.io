@@ -10,5 +10,5 @@ export async function load() {
     ...thoughts.map((t) => ({ ...t, kind: 'thought' }))
   ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  return { latest };
+  return { latest: latest.slice(0, 7) };
 }

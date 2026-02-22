@@ -16,9 +16,9 @@
 
 <div class="flex flex-col gap-6">
   {#each data.projects as project}
-    <div class="border-border rounded-lg border p-5">
+    <div class="bg-bg-secondary rounded-lg p-5">
       <div class="mb-2 flex items-baseline justify-between gap-4">
-        <h3 class="text-lg font-bold">{project.title}</h3>
+        <h3 class="text-text-primary text-lg font-bold">{project.title}</h3>
         <div class="flex gap-4 text-sm whitespace-nowrap">
           {#if project.repo}
             <a href={project.repo} target="_blank" rel="noopener noreferrer">Repo</a>
@@ -28,7 +28,7 @@
           {/if}
         </div>
       </div>
-      <div class="prose max-w-none">
+      <div class="prose text-text-primary [&_a]:text-text-primary max-w-none [&_a]:underline">
         <project.Content />
       </div>
       {#if relatedThoughts(project.slug).length > 0}
