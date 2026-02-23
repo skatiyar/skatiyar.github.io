@@ -26,10 +26,10 @@ src/
     sitemap.xml/     # /sitemap.xml
   lib/
     components/      # Header, Footer, Hero, SEO
-    config.js        # Site metadata (title, author, URL, GA ID)
+    config.js        # Site metadata (title, author, URL, GA ID, OG image)
     utils/thoughts.js  # Thought loader (import.meta.glob)
     utils/projects.js  # Project loader (import.meta.glob)
-  app.html           # Shell HTML — GA4 gtag.js snippet, dark class
+  app.html           # Shell HTML — GA4 gtag.js snippet, RSS autodiscovery, dark class
   app.css            # Tailwind v4 config (@theme tokens, @variant dark, base styles)
 ```
 
@@ -80,6 +80,18 @@ ranking: number # display order (lower = first); date used as tiebreaker
 - Accent: terracotta `#c2410c` (light) / orange `#fb923c` (dark)
 - All colors defined as CSS custom properties in `app.css` `@theme` + `:root.dark`
 - No hardcoded colors in components — always use token classes (`text-text-primary`, `bg-bg-secondary`, etc.)
+
+## SEO
+
+- **robots.txt**: `static/robots.txt` — allows all crawlers, references sitemap
+- **Sitemap**: `src/routes/sitemap.xml/+server.js` — static pages + thought slugs, with `lastmod`, `changefreq`, `priority`
+- **RSS**: `src/routes/rss.xml/+server.js` — thoughts only; autodiscovery `<link>` in `app.html`
+- **SEO component**: `src/lib/components/SEO.svelte` — canonical URL, Open Graph, Twitter Card meta tags; `image` defaults to `siteConfig.ogImage` (absolute URL derived at render)
+- **JSON-LD structured data**:
+  - `WebSite` schema in `+layout.svelte` (all pages)
+  - `Person` schema in `+page.svelte` (homepage)
+  - `Article` schema in `thoughts/[slug]/+page.svelte` (each thought)
+- **OG image**: `static/og-image.png` (1200x630 recommended); referenced via `ogImage` in `config.js`
 
 ## Conventions
 
