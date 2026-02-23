@@ -5,12 +5,13 @@
   let {
     title = siteConfig.title,
     description = siteConfig.description,
-    image = '',
+    image = siteConfig.ogImage,
     article = false
   } = $props();
 
   const fullTitle = title === siteConfig.title ? title : `${title} | ${siteConfig.title}`;
   const pageUrl = `${siteConfig.url}${$page.url.pathname}`;
+  const imageUrl = image ? `${siteConfig.url}${image}` : '';
 </script>
 
 <svelte:head>
@@ -26,7 +27,7 @@
   <meta property="og:site_name" content={siteConfig.title} />
   <meta property="og:locale" content="en_US" />
   {#if image}
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={imageUrl} />
   {/if}
 
   <!-- Twitter -->
@@ -34,7 +35,7 @@
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />
   {#if image}
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={imageUrl} />
   {/if}
 
   <link rel="canonical" href={pageUrl} />

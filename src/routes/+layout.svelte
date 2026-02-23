@@ -1,10 +1,22 @@
 <script>
   import '../app.css';
   import { browser } from '$app/environment';
+  import { siteConfig } from '$lib/config.js';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
   let { children } = $props();
+
+  const websiteSchemaTag =
+    '<script type="application/ld+json">' +
+    JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: siteConfig.title,
+      url: siteConfig.url
+    }) +
+    '</' +
+    'script>';
 
   $effect(() => {
     if (!browser) return;
@@ -20,6 +32,11 @@
     }
   });
 </script>
+
+<svelte:head>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html websiteSchemaTag}
+</svelte:head>
 
 <Header />
 <main class="max-w-content ml-[max(1.5rem,calc((100%-720px)/2.618))] flex-1 pt-3 pr-6 pb-8">

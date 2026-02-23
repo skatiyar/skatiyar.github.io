@@ -1,12 +1,29 @@
 <script>
   import SEO from '$lib/components/SEO.svelte';
   import Hero from '$lib/components/Hero.svelte';
+  import { siteConfig } from '$lib/config.js';
   import { base } from '$app/paths';
 
   let { data } = $props();
+
+  const personSchemaTag =
+    '<script type="application/ld+json">' +
+    JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: siteConfig.author,
+      url: siteConfig.url,
+      description: siteConfig.description
+    }) +
+    '</' +
+    'script>';
 </script>
 
 <SEO />
+<svelte:head>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html personSchemaTag}
+</svelte:head>
 
 <Hero
   title="Suyash Katiyar"

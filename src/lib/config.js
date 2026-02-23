@@ -5,5 +5,6 @@ export const siteConfig = {
   url: 'https://skatiyar.info',
   author: 'Suyash Katiyar',
   language: 'en',
-  gaId: 'G-PB5VFFL6PM'
+  gaId: 'G-PB5VFFL6PM',
+  ogImage: '/og-image.png'
 };
