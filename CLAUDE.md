@@ -84,8 +84,8 @@ ranking: number # display order (lower = first); date used as tiebreaker
 ## SEO
 
 - **robots.txt**: `static/robots.txt` — allows all crawlers, references sitemap
-- **Sitemap**: `src/routes/sitemap.xml/+server.js` — static pages + thought slugs, with `lastmod`, `changefreq`, `priority`
-- **RSS**: `src/routes/rss.xml/+server.js` — thoughts only; autodiscovery `<link>` in `app.html`
+- **Sitemap**: `src/routes/sitemap.xml/+server.js` — static pages + thought slugs, with `lastmod`, `changefreq`, `priority`; built with `fast-xml-parser` `XMLBuilder`
+- **RSS**: `src/routes/rss.xml/+server.js` — thoughts only; autodiscovery `<link>` in `app.html`; built with `fast-xml-parser` `XMLBuilder`
 - **SEO component**: `src/lib/components/SEO.svelte` — canonical URL, Open Graph, Twitter Card meta tags; `image` defaults to `siteConfig.ogImage` (absolute URL derived at render)
 - **JSON-LD structured data**:
   - `WebSite` schema in `+layout.svelte` (all pages)
