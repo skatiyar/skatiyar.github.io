@@ -5,7 +5,7 @@ type: opensource
 repo: https://github.com/skatiyar/pacman
 url: https://skatiyar.info/pacman/
 date: '2018-11-10'
-ranking: 2
+ranking: 3
 ---
 
 I came across Eller's algorithm for maze generation, a few months back. Eller's algorithm creates a perfect maze, by generating next row, on basis of current row. Giving us ability to create maze with infinite rows.
